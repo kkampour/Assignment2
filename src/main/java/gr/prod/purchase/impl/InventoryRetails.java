@@ -10,12 +10,13 @@ public class InventoryRetails implements IStore {
 
     private double totalBuyBalance;
     private double totalSellBalance;
+    List<Product> productList;
 
     public InventoryRetails() {
-
+    productList= new ArrayList<>();
     }
 
-    List<Product> productList;
+
     public List<Product> getInventory(){
         return productList;
     }
@@ -38,7 +39,7 @@ public class InventoryRetails implements IStore {
 
     @Override
     public double getRevenue() {
-        return 0;
+        return totalSellBalance-totalBuyBalance;
     }
 
     //public List<Product> getInventory(){
